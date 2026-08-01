@@ -84,6 +84,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    align-items: start; /* Исправлено: блоки не тянут друг друга по высоте */
 }
 
 /* Модули */
@@ -210,12 +211,12 @@ body {
     font-size: 13px;
     letter-spacing: 1px;
 }
-
 .sub-nick {
     color: #e63946;
     font-size: 10px;
     opacity: 0.8;
 }
+
 /* Выделение твоего ника */
 .my-row {
     border-left-color: #ff4d4d;
