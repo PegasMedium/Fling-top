@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP FLING THINGS AND PEOPLE // PEGASUS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="hud-container">
+        
+        <!-- Шапка -->
+        <header class="top-bar">
+            <div class="brand">
+                <span class="system-status">SYSTEM ONLINE</span>
+                <h1 class="main-title">TOP FLING THINGS AND PEOPLE</h1>
+                <div class="author-badge">by Pegasus</div>
+            </div>
+            <a href="https://discord.gg/eqPQFgsQj" target="_blank" class="discord-btn">[ JOIN DISCORD ]</a>
+        </header>
+
+        <!-- ЭТАЖ 1: ALL TIME TOP (15 мест) -->
+        <section class="floor floor-1">
+            <div class="hud-module main-floor">
+                <div class="module-header">
+                    <div>
+                        <span class="module-tag">// GLOBAL RATING</span>
+                        <h2>ALL TIME TOP</h2>
+                    </div>
+                    <button class="expand-btn" onclick="toggleModule(this)" title="Раскрыть список">▼</button>
+                </div>
+                <div class="module-body">
+                    <div class="player-row leader">
+                        <span class="slot-num">[ 01 ]</span>
+                        <span class="player-name">Player_One</span>
+                    </div>
+                    <div class="player-row">
+                        <span class="slot-num">[ 02 ]</span>
+                        <span class="player-name">Player_Two</span>
+                    </div>
+                    <div class="player-row">
+                        <span class="slot-num">[ 03 ]</span>
+                        <span class="player-name">Player_Three</span>
+                    </div>
+
+                    <!-- Скрытая часть (места 4–15) -->
+                    <div class="hidden-rows">
+                        <div class="player-row"><span class="slot-num">[ 04 ]</span><span class="player-name">Player_Four</span></div>
+                        <div class="player-row"><span class="slot-num">[ 05 ]</span><span class="player-name">Player_Five</span></div>
+                        <div class="player-row"><span class="slot-num">[ 06 ]</span><span class="player-name">Player_Six</span></div>
+                        <div class="player-row"><span class="slot-num">[ 07 ]</span><span class="player-name">Player_Seven</span></div>
+                        <div class="player-row"><span class="slot-num">[ 08 ]</span><span class="player-name">Player_Eight</span></div>
+                        <div class="player-row"><span class="slot-num">[ 09 ]</span><span class="player-name">Player_Nine</span></div>
+                        <div class="player-row"><span class="slot-num">[ 10 ]</span><span class="player-name">Player_Ten</span></div>
+                        <div class="player-row"><span class="slot-num">[ 11 ]</span><span class="player-name">Player_Eleven</span></div>
+                        <div class="player-row"><span class="slot-num">[ 12 ]</span><span class="player-name">Player_Twelve</span></div>
+                        <div class="player-row"><span class="slot-num">[ 13 ]</span><span class="player-name">Player_Thirteen</span></div>
+                        <div class="player-row"><span class="slot-num">[ 14 ]</span><span class="player-name">Player_Fourteen</span></div>
+                        <div class="player-row"><span class="slot-num">[ 15 ]</span><span class="player-name">Player_Fifteen</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ЭТАЖ 2: HvH Секция (По 10 мест) -->
+        <section class="floor floor-grid">
+            <!-- TOP HvH PLAYERS -->
+			<div class="hud-module">
+                <div class="module-header">
+                    <div>
+                        <span class="module-tag">// SOLO</span>
+                        <h2>TOP HvH PLAYERS</h2>
+                    </div>
+                    <button class="expand-btn" onclick="toggleModule(this)" title="Раскрыть список">▼</button>
+                </div>
+                <div class="module-body">
+                    <div class="player-row leader"><span class="slot-num">[ 01 ]</span><span class="player-name">HvH_Player_1</span></div>
+                    <div class="player-row"><span class="slot-num">[ 02 ]</span><span class="player-name">HvH_Player_2</span></div>
+                    <div class="player-row"><span class="slot-num">[ 03 ]</span><span class="player-name">HvH_Player_3</span></div>
+
+                    <div class="hidden-rows">
+                        <div class="player-row my-row">
+                            <span class="slot-num">[ 04 ]</span>
+                            <div class="player-details">
+                                <span class="player-name">Pegasus</span>
+                            </div>
+                        </div>
+                        <div class="player-row"><span class="slot-num">[ 05 ]</span><span class="player-name">HvH_Player_5</span></div>
+                        <div class="player-row"><span class="slot-num">[ 06 ]</span><span class="player-name">HvH_Player_6</span></div>
+                        <div class="player-row"><span class="slot-num">[ 07 ]</span><span class="player-name">HvH_Player_7</span></div>
+                        <div class="player-row"><span class="slot-num">[ 08 ]</span><span class="player-name">HvH_Player_8</span></div>
+                        <div class="player-row"><span class="slot-num">[ 09 ]</span><span class="player-name">HvH_Player_9</span></div>
+                        <div class="player-row"><span class="slot-num">[ 10 ]</span><span class="player-name">HvH_Player_10</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOP CLANS HvH -->
+            <div class="hud-module">
+                <div class="module-header">
+                    <div>
+                        <span class="module-tag">// TEAMS</span>
+                        <h2>TOP CLANS HvH</h2>
+                    </div>
+                    <button class="expand-btn" onclick="toggleModule(this)" title="Раскрыть список">▼</button>
+                </div>
+                <div class="module-body">
+                    <div class="player-row leader"><span class="slot-num">[ 01 ]</span><span class="player-name">Clan_HvH_1</span></div>
+                    <div class="player-row"><span class="slot-num">[ 02 ]</span><span class="player-name">Clan_HvH_2</span></div>
+                    <div class="player-row"><span class="slot-num">[ 03 ]</span><span class="player-name">SVD</span></div>
+
+                    <div class="hidden-rows">
+                        <div class="player-row"><span class="slot-num">[ 04 ]</span><span class="player-name">Clan_HvH_4</span></div>
+                        <div class="player-row"><span class="slot-num">[ 05 ]</span><span class="player-name">Clan_HvH_5</span></div>
+                        <div class="player-row"><span class="slot-num">[ 06 ]</span><span class="player-name">Clan_HvH_6</span></div>
+                        <div class="player-row"><span class="slot-num">[ 07 ]</span><span class="player-name">Clan_HvH_7</span></div>
+                        <div class="player-row"><span class="slot-num">[ 08 ]</span><span class="player-name">Clan_HvH_8</span></div>
+                        <div class="player-row"><span class="slot-num">[ 09 ]</span><span class="player-name">Clan_HvH_9</span></div>
+                        <div class="player-row"><span class="slot-num">[ 10 ]</span><span class="player-name">Clan_HvH_10</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+		<!-- ЭТАЖ 3: PvP Секция (По 10 мест) -->
+        <section class="floor floor-grid">
+            <!-- TOP CLANS PvP -->
+            <div class="hud-module">
+                <div class="module-header">
+                    <div>
+                        <span class="module-tag">// TEAMS</span>
+                        <h2>TOP CLANS PvP</h2>
+                    </div>
+                    <button class="expand-btn" onclick="toggleModule(this)" title="Раскрыть список">▼</button>
+                </div>
+                <div class="module-body">
+                    <div class="player-row leader"><span class="slot-num">[ 01 ]</span><span class="player-name">Clan_PvP_1</span></div>
+                    <div class="player-row"><span class="slot-num">[ 02 ]</span><span class="player-name">Clan_PvP_2</span></div>
+                    <div class="player-row"><span class="slot-num">[ 03 ]</span><span class="player-name">Clan_PvP_3</span></div>
+
+                    <div class="hidden-rows">
+                        <div class="player-row"><span class="slot-num">[ 04 ]</span><span class="player-name">Clan_PvP_4</span></div>
+                        <div class="player-row"><span class="slot-num">[ 05 ]</span><span class="player-name">Clan_PvP_5</span></div>
+                        <div class="player-row"><span class="slot-num">[ 06 ]</span><span class="player-name">Clan_PvP_6</span></div>
+                        <div class="player-row"><span class="slot-num">[ 07 ]</span><span class="player-name">Clan_PvP_7</span></div>
+                        <div class="player-row"><span class="slot-num">[ 08 ]</span><span class="player-name">Clan_PvP_8</span></div>
+                        <div class="player-row"><span class="slot-num">[ 09 ]</span><span class="player-name">Clan_PvP_9</span></div>
+                        <div class="player-row"><span class="slot-num">[ 10 ]</span><span class="player-name">Clan_PvP_10</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOP PvP PLAYERS -->
+            <div class="hud-module">
+                <div class="module-header">
+                    <div>
+                        <span class="module-tag">// SOLO</span>
+                        <h2>TOP PvP PLAYERS</h2>
+                    </div>
+                    <button class="expand-btn" onclick="toggleModule(this)" title="Раскрыть список">▼</button>
+                </div>
+                <div class="module-body">
+                    <div class="player-row leader"><span class="slot-num">[ 01 ]</span><span class="player-name">PvP_Player_1</span></div>
+                    <div class="player-row"><span class="slot-num">[ 02 ]</span><span class="player-name">PvP_Player_2</span></div>
+                    <div class="player-row"><span class="slot-num">[ 03 ]</span><span class="player-name">PvP_Player_3</span></div>
+
+                    <div class="hidden-rows">
+                        <div class="player-row"><span class="slot-num">[ 04 ]</span><span class="player-name">PvP_Player_4</span></div>
+                        <div class="player-row my-row">
+                            <span class="slot-num">[ 05 ]</span>
+                            <div class="player-details">
+                                <span class="player-name">Pegasus</span>
+                                <span class="sub-nick">(@YATAGARASU421)</span>
+                            </div>
+                        </div>
+                        <div class="player-row">
+                            <span class="slot-num">[ 06 ]</span>
+                            <div class="player-details">
+                                <span class="player-name">DUSHESS</span>
+                                <span class="sub-nick">(ник неизвестен)</span>
+                            </div>
+							</div>
+                        <div class="player-row"><span class="slot-num">[ 07 ]</span><span class="player-name">PvP_Player_7</span></div>
+                        <div class="player-row"><span class="slot-num">[ 08 ]</span><span class="player-name">PvP_Player_8</span></div>
+                        <div class="player-row"><span class="slot-num">[ 09 ]</span><span class="player-name">PvP_Player_9</span></div>
+                        <div class="player-row"><span class="slot-num">[ 10 ]</span><span class="player-name">PvP_Player_10</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Скрипт для раскрытия списков -->
+    <script>
+        function toggleModule(btn) {
+            const module = btn.closest('.hud-module');
+            module.classList.toggle('expanded');
+        }
+    </script>
+
+</body>
+</html>
