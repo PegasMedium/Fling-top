@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+/* Фиксируем скроллбар, чтобы экран не дёргался при раскрытии */
+html {
+    overflow-y: scroll;
+}
+
 body {
     background-color: #040102;
     background-image: 
@@ -68,7 +73,8 @@ body {
     padding: 10px 18px;
     font-size: 12px;
     letter-spacing: 2px;
-    transition: all 0.2s ease;
+    border-radius: 6px;
+    transition: all 0.25s ease;
     background: rgba(230, 57, 70, 0.05);
 }
 
@@ -79,21 +85,22 @@ body {
     font-weight: bold;
 }
 
-/* Поэтажная структура */
+/* Поэтажная структура - изолируем карточки по высоте */
 .floor-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    align-items: start; /* Исправлено: блоки не тянут друг друга по высоте */
+    align-items: start;
 }
 
-/* Модули */
+/* Модули / Карточки */
 .hud-module {
     background: rgba(15, 4, 6, 0.85);
     border: 1px solid #3a080d;
     padding: 20px;
     position: relative;
-    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .hud-module::before {
@@ -136,16 +143,17 @@ body {
     text-transform: uppercase;
 }
 
-/* Стрелочка */
+/* Кнопка-стрелочка */
 .expand-btn {
     background: transparent;
     border: 1px solid #3a080d;
     color: #e63946;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 12px;
-    transition: all 0.3s ease;
+    transition: transform 0.35s ease, background 0.2s, border-color 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -161,16 +169,24 @@ body {
     transform: rotate(180deg);
 }
 
-/* Скрываемые ряды */
+/* Надёжная и плавная анимация раскрытия через max-height */
 .hidden-rows {
-    display: none;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 8px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
 }
 
 .expanded .hidden-rows {
+    max-height: 800px; /* Запас по высоте для всех 15 мест */
+    opacity: 1;
+}
+
+.hidden-rows > div {
     display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 8px;
 }
 
 .module-body {
@@ -178,7 +194,7 @@ body {
     flex-direction: column;
     gap: 8px;
 }
-
+/* Ряды игроков */
 .player-row {
     background: #0a0204;
     border-left: 3px solid #3a080d;
@@ -186,12 +202,14 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    transition: all 0.2s;
+    border-radius: 0 6px 6px 0;
+    transition: all 0.25s ease;
 }
 
 .player-row:hover {
     border-left-color: #e63946;
     background: #140407;
+    transform: translateX(3px);
 }
 
 .slot-num {
@@ -211,13 +229,13 @@ body {
     font-size: 13px;
     letter-spacing: 1px;
 }
+
 .sub-nick {
     color: #e63946;
     font-size: 10px;
     opacity: 0.8;
 }
 
-/* Выделение твоего ника */
 .my-row {
     border-left-color: #ff4d4d;
     background: rgba(230, 57, 70, 0.08);
